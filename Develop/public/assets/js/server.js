@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Air traffic control, require the routes for the server
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("/routes/apiRoutes")(app);
+require("/routes/htmlRoutes")(app);
 
 //Make sure the PORT is listening, or it won't work
 app.listen(PORT, function() {
