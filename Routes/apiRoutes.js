@@ -25,3 +25,10 @@ function getID(notesData) {
 }
 
 notesData.sort((a, b) => a.id - b.id);
+
+const nextIndexAfterLast = notesData.length;
+for (let i = 0; i < nextIndexAfterLast; i++) {
+    if (notesData[i].id !== i) {
+        return i;
+    }
+}
