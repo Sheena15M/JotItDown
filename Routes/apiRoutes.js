@@ -51,4 +51,11 @@ module.exports = app => {
         return res.json(notesData);
     }
     );
+    app.delete("/api/notes/:id", (req,res) => {
+        const id = parseInt (req.params.id);
+        for let (i = 0; i < notesData.length; ++i) {
+            if (id === notesData[i].id)
+        }
+    }
+    )
 }
