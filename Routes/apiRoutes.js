@@ -53,9 +53,13 @@ module.exports = app => {
     );
     app.delete("/api/notes/:id", (req,res) => {
         const id = parseInt (req.params.id);
-        for let (i = 0; i < notesData.length; ++i) {
-            if (id === notesData[i].id)
+        for (let i = 0; i < notesData.length; ++i) {
+            if (id === notesData[i].id) {
+                notesData.splice(i, 1);
+                return;
+            }
         }
-    }
-    )
-}
+    writeNotesData(notesData);
+    res.send(notesData);
+    });
+};
