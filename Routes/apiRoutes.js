@@ -42,4 +42,13 @@ return nextIndexAfterLast;
 //Get the notes, post them, and if you're done delete them 
 module.exports = app => {
     app.get("/api/notes", (req, res) => res.json(notesData));
+
+    app.post("/api/notes", (req, res) => {
+        let data = req.body;
+        data.id = getID (notesData);
+        notesData.push(data);
+        writeNotesData(notesData);
+        return res.json(notesData);
+    }
+    );
 }
