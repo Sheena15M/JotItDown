@@ -12,8 +12,16 @@ function writeNotesData(notesData) {
     fs.writeFileSync(
         path.join(__dirname, "../db/db.json"),
         JSON.stringify(notesData),
-        err ==> {
+        err => {
             if (err) throw err;
         }
     );
 }
+
+function getID(notesData) {
+    if (notesData.length === 0) {
+        return 0;
+    }
+}
+
+notesData.sort((a, b) => a.id - b.id);
